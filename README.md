@@ -1,4 +1,4 @@
-### Présentation d'outils de logs
+### Présentation de Docker
 
 http://mfilotto.github.io/docker-presentation
 
