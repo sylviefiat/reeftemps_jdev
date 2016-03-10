@@ -27,6 +27,13 @@
     padding-left: 40px;
 }
 
+
+.slide-corner-bottom {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+}
+
 .lexicon p {
     margin-bottom: 10px;
 }
