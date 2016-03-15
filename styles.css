@@ -37,3 +37,8 @@
 .lexicon p {
     margin-bottom: 10px;
 }
+
+.selected {
+    color: #4ccbff;
+    font-weight: bold;
+}

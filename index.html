@@ -8,6 +8,8 @@
     <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
+<a href='https://github.com/mfilotto/docker-presentation'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
 <div id="impress">
     <!-- our slides will go here -->
     <div class="fallback-message">
@@ -27,7 +29,7 @@
             <li>Un peu d'Histoire</li>
             <li>Les concepts fondateurs</li>
             <li>Une présentation générale de la Toolbox</li>
-            <li>La stratégie commerciale et la standardisation</li>
+            <li>La stratégie Docker Inc</li>
             <li>Les paradigmes promus par Docker</li>
             <li>De nouvelles problématiques</li>
             <li>L'écosystème Docker</li>
@@ -56,7 +58,7 @@
             <li>2006 - Solomon Hykes diplômé de l'Eptitech</li>
             <li>2008 - création de dotCloud avec Sébastien Pahl</li>
             <li>Aucun finacement trouvé parmi les business angels français</li>
-            <li>Le 1er virage : un changement géographiquer</li>
+            <li>Le 1er virage : un changement géographique</li>
             <li>2010 - Incubation au sein de Y Combinator</li>
             <li>Les start-up de Y Combinator comme early adopters</li>
             <li>"Go, c'est un peu la Suisse des langages modernes"</li>
@@ -88,11 +90,27 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>Les concepts fondateurs</h1><br/>
         <ol>
+            <li>Une première approche</li>
             <li>L'allégorie du container</li>
             <li>Le slogan devOPS</li>
             <li>Le container linux LXC</li>
         </ol>
     </section>  
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>Concepts fondateurs : Une première approche</h1><br/>
+        <ol>
+            <li>Un mode de virtualisation léger et rapide</li>
+            <li>Basé sur les containers linux LXC</li><br/>
+            <li>Une execution isolée</li>
+            <li>Avec maitrise des flux (port, montage disque)</li><br/>
+            <li>Un mécanisme de gestion de configuration</li>
+            <li>Avec des scripts d'installation versionnés</li><br/>
+            <li>Un outil de déploiement simple et intégré</li>
+            <li>Avec un dépôt central des images à installer</li>
+        </ol>
+    </section> 
 
     <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
@@ -148,18 +166,20 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>Concepts fondateurs : Le slogan devOPS</h1>
         <h2>"Build, ship and run any app, anywhere"</h1>
+        <img src="img/docker-build-ship-run.png" alt="Build ship run" width="615"/>
         <img src="img/docker-slogan.png" alt="Slogan docker" width="700"/>
-        <span class="slide-corner-bottom"><img src="img/docker-build-ship-run.png" alt="Build ship run" width="615"/></span>
     </section>
 
     <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : La couche technique LXC</h1><br/>
+        <h1>Concepts fondateurs : Le container linux LXC</h1>
+        <h2>Container vs VM</h1>
+        <img src="img/containers-vs-vm.jpg" alt="Container vs VM" width="830"/>
         <ol>
-            <li>L'allégorie du container</li>
-            <li>Le slogan devOPS</li>
-            <li>Le container linux LXC</li>
-        </ol>
+            <li>Une technologie Linux-only</li>
+            <li>Le kernel linux de l'hôte partagé avec les containers</li>
+            <li>Un container = un processus linux isolé sur un hôte linux</li>
+        </ol>            
     </section> 
 
     <section class="step slide" data-x="-2000" data-y="-1500">
@@ -180,6 +200,16 @@
 
     <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>La Toolbox : Une présentation</h1><br/>
+        <ol>
+            <li>Briques Open Source sous licence Apache V2</li>
+            <li>le mantra Docker: “batteries included but swappable</li>
+        </ol>
+        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : Une présentation</h1>
         <h2>L'environnement d'execution Linux</h1><br/>
         <img src="img/docker-host.png" alt="docker host" width="800"/>
@@ -193,41 +223,59 @@
     </section>
 
     <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : La Registry</h1><br/>
+        <span class="slide-corner"><img src="img/docker-registry.png" alt="docker registry" height="42" width="42"/></span>
+        <h1>La Toolbox : La Registry comme écrin</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li class="selected">La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
         <span class="slide-corner-bottom"><img src="img/docker-registry.png" alt="docker registry" width="350"/></span>
     </section> 
 
     <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-registry.png" alt="docker registry" height="42" width="42"/></span>
+        <h1>La Toolbox : La Registry comme écrin</h1>
+        <h2>Qu'est-ce que la Registry ?</h1><br/>
+        <ol>
+            <li>Projet Open source <a href="https://github.com/docker/distribution">Distribution</a> sous licence Apache V2</li>
+            <li>Un lieu central ou stocker et distribuer des images Docker</li>
+            <li>Stocke les différentes couches d'une image</li>
+            <li>Stocke la description permettant de construire une image</li>
+            <li>Expose une API aux clients Docker</li>
+            <li>En V2 emet des notifications webhook (autoredeploy <i class="fa fa-thumbs-o-up"></i>)</li><br/>
+            <li><a href="https://hub.docker.com">Docker Hub</a>: registry SaaS (images publiques gratuites <i class="fa fa-thumbs-o-up"></i>)</li>
+            <li>Docker Trusted Registry: version on-premise de Docker Hub</li>
+        </ol>
+    </section> 
+
+
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : L'Engine</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose, la palette de l'achitecte</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
+        <span class="slide-corner-bottom"><img src="img/docker-background.jpg" alt="docker toolbox" width="350"/></span>
     </section> 
 
     <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : L'Engine</h1>
-        <h2>Les commandes de bases</h1>
+        <h2>Les commandes de base</h1>
         <img src="img/docker-commandes.png" alt="docker lifecyle" width="700"/>
     </section>
 
@@ -235,30 +283,52 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : Un Dockerfile à son Image</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
         <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
     </section> 
 
     <section class="step slide" data-x="-2000" data-y="-1500">
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose</h1><br/>
+        <h1>La Toolbox : Un Dockerfile à son Image</h1>
+        <h2>Qu'est-ce qu'une image ?</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Identifiée par organisation/nom:version</li>
+            <li>Un empilement de couches</li>
+            <li>Février 2016 : Hykes annonce le portage des images officielles sur Alpine</li>
+        </ol>
+        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>La Toolbox : Le Compose pour sa palette</h1><br/>
+        <ol>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
+        </ol>
+        <span class="slide-corner-bottom"><img src="img/docker-compose.png" alt="docker compose" width="350"/></span>
+    </section> 
+
+    <section class="step slide" data-x="-2000" data-y="-1500">
+        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
+        <h1>La Toolbox : Le Compose pour sa palette</h1><br/>
+        <ol>
+            <li>Anciennement Fig</li>
+
         </ol>
         <span class="slide-corner-bottom"><img src="img/docker-compose.png" alt="docker compose" width="350"/></span>
     </section> 
@@ -267,14 +337,14 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : Le Swarm</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
         <span class="slide-corner-bottom"><img src="img/docker-swarm.png" alt="docker swarm" width="350"/></span>
     </section> 
@@ -283,14 +353,14 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : La Machine</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
         <span class="slide-corner-bottom"><img src="img/docker-machine.png" alt="docker machine" width="350"/></span>
     </section> 
@@ -299,14 +369,14 @@
         <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
         <h1>La Toolbox : Le Kitematic</h1><br/>
         <ol>
-            <li>Engine</li>
-            <li>Registry</li>
-            <li>Image</li>
-            <li>Dockerfile</li>
-            <li>Compose</li>
-            <li>Swarm</li>
-            <li>Machine</li>
-            <li>Kitematic</li>
+            <li>Une présentation</li>
+            <li>La Registry comme écrin</li>
+            <li>L'Engine</li>
+            <li>Un Dockerfile a son image</li>
+            <li>Le Compose pour sa palette</li>
+            <li>Le Swarm</li>
+            <li>La Machine</li>
+            <li>Le Kitematic</li>
         </ol>
         <span class="slide-corner-bottom"><img src="img/kitematic.png" alt="kitematic" width="350"/></span>
     </section> 
@@ -386,6 +456,7 @@
         <p>Bonne présentation : <a href="http://fr.slideshare.net/chanezon?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview">Speaker Deck de Victor Vieux</a></p>
         <p>Univers graphique : <a href="https://fr.pinterest.com/bloglaurel/bloglaurel-my-work/">Dessinatrice Laurel</a></p>
         <p>Très bonnes présentations : <a href="https://speakerdeck.com/vieux/">Dessinatrice Laurel</a></p>
+        <p>Grands concepts : <a href="http://fr.slideshare.net/rchalumeau/docker-le-buzz-est-il-justifi">Docker le buzz est il justifié ?</a></p>
         <p>Panel des acteurs : <a href="https://www.mindmeister.com/fr/389671722/open-container-ecosystem-formerly-docker-ecosystem">Docker Ecosystem</a></p>
         <p>Documentation de référence : <a href="https://docs.docker.com">Le site de Docker </a></p>
         <span class="slide-corner-bottom"><img src="img/docker-laurel.jpg" alt="dessinatrice Laurel" width="350"/></span>           
