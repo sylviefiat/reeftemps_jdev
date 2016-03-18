@@ -1,0 +1,53 @@
+<div>
+	<ul>
+		<li><code>MAINTAINER &lt;name&gt;</code></li>
+		<ul>
+			<li><b>Auteur</b> de l'image</li>
+		</ul>
+		<li><code>FROM &lt;image&gt;</code></li>
+		<ul>
+			<li><b>nom de l'image de base existante</b> qui sert de base à l'image à créer afin de ne pas partir de rient de tout mais du contenu d'une image existante</li>
+			<li>pour une image fonctionnant sur Ubuntu, l'image de base peut être Ubuntu</li>
+		</ul>
+		<li><code>ENV &lt;key&gt; &lt;value&gt;</code></li>
+		<ul>
+			<li>Définir une <b>variable d'environnement</b></li>
+		</ul>
+		<li><code>ADD &lt;src&gt; &lt;dest&gt;</code></li>
+		<ul>
+			<li><b>Ajoute un fichier local dans l'image</b></li>
+		</ul>
+		<li><code>VOLUME ["/&lt;dir&gt;"]</code></li>
+		<ul>
+			<li><b>Répertoire monté au démarrage du conteneur</b> qui est externe au conteneur.&nbsp;</li>
+			<li>Ceci permet de conserver les fichiers après arrêt du conteneur</li>
+			<li>Voir documentation :&nbsp;<a href="http://docs.docker.io/use/working_with_volumes/" target="_blank">Sharing Directories using volumes</a></li>
+		</ul>
+		<li><code>USER &lt;user&gt;</code></li>
+		<ul>
+			<li>Indique l'<b>utilisateur Linux</b> utilisé lors du démarrage du conteneur</li>
+		</ul>
+		<li><code>EXPOSE &lt;port&gt;</code></li>
+		<ul>
+			<li>Indique le <b>port réseau</b> exposé par le conteneur</li>
+			<li>Ceci est utilisé pour définir sur quels ports réseau communiquent les conteneurs entre eux ou vers l'extérieur de la machine hôte de Docker</li>
+			<li>Voir documentation :&nbsp;</li>
+			<ul>
+				<li><a href="http://docs.docker.com/userguide/dockerlinks/" target="_blank">Linking containers together</a>&nbsp;: configuration de l'interconnexion réseau entre conteneurs</li>
+				<li><a href="http://docs.docker.com/articles/networking/" target="_blank">Network Configuration</a>&nbsp;: configuration des redirections de port sur la machine hôte</li>
+			</ul>
+		</ul>
+		<li><code>RUN &lt;command&gt;</code></li>
+		<li><code>RUN ["executable", "param1", "param2"]</code></li>
+		<ul>
+			<li><b>Exécute la commande</b> sur l'image</li>
+		</ul>
+		<li><code>CMD &lt;command&gt;</code></li>
+		<li><code>CMD ["executable", "param1", "param2"]</code></li>
+		<ul>
+			<li>Il ne doit y avoir qu'un seul CMD dans le fichier Dockerfile</li>
+			<li>Il s'agit de la <b>commande qui est lancée à chaque démarrage d'un conteneur</b> basé sur cette image : par exemple, si l'image contient le serveur Tomcat, il peut s'agir de lancer l'exécution du serveur Tomcat au démarrage du conteneur</li>
+			<li>La commande n'est lancée qu'à l'exécution du conteneur et non durant la construction de l'image</li>
+			<li>Cette commande peut être redéfinie dans la commande de lancement du conteneur</li>
+		</ul>
+	</div>
