@@ -1,11 +1,11 @@
 # Installation de l'environnement Docker sur Windows
 
 ## Installer Babun : http://babun.github.io/
-  - coper et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker
+  - coper et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker\babun-1.2.0-dist.zip (téléchargée ici : http://projects.reficio.org/babun/download)
   - lancer l'installation
   
 ## Installer Docker Toolbox ? : https://www.docker.com/products/docker-toolbox
-  - Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe
+  - Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe (téléchargée ici : https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe)
   
 ## Créer un Docker Host avec docker machine
   - Lancer la commande : 
