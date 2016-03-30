@@ -9,7 +9,7 @@
   
 ## Créer un Docker Host avec docker machine
   - Lancer la commande : 
-    ```docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://proxy.recif.nc:80 --engine-env``` HTTPS_PROXY=http://proxy.recif.nc:80 dockerbirthday
+    ```docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://proxy.recif.nc:80 --engine-env HTTPS_PROXY=http://proxy.recif.nc:80 dockerbirthday```
   - Afficher les docker hosts 
     ```docker-machine ls```
   - Afficher les variables d'environnement à positionner pour communiquer avec le default host
