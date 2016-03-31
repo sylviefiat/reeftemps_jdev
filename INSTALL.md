@@ -18,6 +18,7 @@ export no_proxy=localhost```
   
 ## Installer [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 - Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe (téléchargée [ici](https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe))
+- Activer au besoin l'installation de virtualbox (doit être en version 5)
   
 ## Créer un Docker Host avec docker machine
 - Lancer la commande : 
