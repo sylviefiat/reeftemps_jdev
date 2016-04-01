@@ -1,5 +1,8 @@
 # Installation de l'environnement Docker sur Windows
 
+## Prés-requis
+- ajouter les droits d'administration à l'utilisateur
+
 ## Installer [Babun](http://babun.github.io)
 - coper et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker\babun-1.2.0-dist.zip (téléchargée [ici](http://projects.reficio.org/babun/download))
 - lancer l'installation
