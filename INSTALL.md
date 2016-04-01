@@ -15,14 +15,21 @@ export no_proxy=localhost```
 - Charger la configuration ```source ~/.babunrc```
 - Vérifier l'installation ```babun check```
 - Mettre à jour Babun ```babun update```
+
+## Activer [TTY](http://www.linusakesson.net/programming/tty/) sur Babun avec le [workaround de tiangolo](https://github.com/tiangolo/babun-docker)
+- Lancer la commande ```curl -s https://raw.githubusercontent.com/tiangolo/babun-docker/master/setup.sh | source /dev/stdin```
   
 ## Installer [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
 - Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe (téléchargée [ici](https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe))
 - Activer au besoin l'installation de virtualbox (doit être en version 5)
   
 ## Créer un Docker Host avec docker machine
-- Lancer la commande : 
-    ```docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://proxy.recif.nc:80 --engine-env HTTPS_PROXY=http://proxy.recif.nc:80 dockerbirthday```
+- Afficher les docker host :
+    ```docker-machine ls```
+- Au besoin supprimer la machine default
+    ```docker-machine rm default```
+- Créer une machine default avec variables de proxy : 
+    ```docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://proxy.recif.nc:80 --engine-env HTTPS_PROXY=http://proxy.recif.nc:80 default```
 - Afficher les docker hosts 
     ```docker-machine ls```
 - Afficher les variables d'environnement à positionner pour communiquer avec le default host
@@ -31,3 +38,4 @@ export no_proxy=localhost```
     ```eval $(docker-machine env)```
 - Ajouter la variable NO_PROXY pour exclure l'IP du docker host
     ```export NO_PROXY=$(echo $DOCKER_HOST | sed 's/tcp:\/\/\([^:]*\).*/\1/')```
+    ```export no_proxy=$(echo $DOCKER_HOST | sed 's/tcp:\/\/\([^:]*\).*/\1/')```
