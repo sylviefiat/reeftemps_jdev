@@ -1,10 +1,12 @@
 # Installation de l'environnement Docker sur Windows
 
 ## Prés-requis
-- ajouter les droits d'administration à l'utilisateur
+- Ajouter les droits d'administration à l'utilisateur
+- Ajouter au besoin les variables d'environnement du proxy
+```HTTP_PROXY http://proxy.recif.nc:80```
 
 ## Installer [Babun](http://babun.github.io)
-- coper et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker\babun-1.2.0-dist.zip (téléchargée [ici](http://projects.reficio.org/babun/download))
+- Copier et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker\babun-1.2.0-dist.zip (téléchargée [ici](http://projects.reficio.org/babun/download))
 - lancer l'installation
 
 ## Configurer Babun
@@ -29,7 +31,7 @@ export no_proxy=localhost```
 ## Créer un Docker Host avec docker machine
 - Afficher les docker host :
     ```docker-machine ls```
-- Au besoin supprimer la machine default
+- Supprimer au besoin la machine default
     ```docker-machine rm default```
 - Créer une machine default avec variables de proxy : 
     ```docker-machine create -d virtualbox --engine-env HTTP_PROXY=http://proxy.recif.nc:80 --engine-env HTTPS_PROXY=http://proxy.recif.nc:80 default```
