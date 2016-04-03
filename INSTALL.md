@@ -5,6 +5,10 @@
 - Ajouter au besoin les variables d'environnement du proxy
 ```HTTP_PROXY http://proxy.recif.nc:80```
 
+## Installer [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
+- Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe (téléchargée [ici](https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe))
+- Activer au besoin l'installation de virtualbox (doit être en version 5)
+
 ## Installer [Babun](http://babun.github.io)
 - Copier et dézipper en local le zip I:\Infrastructures\BASD\Applications\docker\babun-1.2.0-dist.zip (téléchargée [ici](http://projects.reficio.org/babun/download))
 - lancer l'installation
@@ -23,10 +27,6 @@ export no_proxy=localhost```
 
 ## Activer [TTY](http://www.linusakesson.net/programming/tty/) sur Babun avec le [workaround de tiangolo](https://github.com/tiangolo/babun-docker)
 - Lancer la commande ```curl -s https://raw.githubusercontent.com/tiangolo/babun-docker/master/setup.sh | source /dev/stdin```
-  
-## Installer [Docker Toolbox](https://www.docker.com/products/docker-toolbox)
-- Lancer l'utilitaire d'installation I:\Infrastructures\BASD\Applications\docker\DockerToolbox-1.10.3.exe (téléchargée [ici](https://github.com/docker/toolbox/releases/download/v1.10.3/DockerToolbox-1.10.3.exe))
-- Activer au besoin l'installation de virtualbox (doit être en version 5)
   
 ## Créer un Docker Host avec docker machine
 - Afficher les docker host :
