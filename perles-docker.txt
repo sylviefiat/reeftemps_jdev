@@ -18,4 +18,5 @@ Les perles de l'écosystème docker
 - prometheus : stats en temps réel
 - CenturyLinkLabs/dockerfile-from-image : Reverse-engineers a Dockerfile from a Docker image
 - CenturyLinkLabs/watchtower : Automatically update running Docker containers
-- tutumcloud/cleanup : Regularly cleans up images and volumes not used by docker 
+- tutumcloud/cleanup : Regularly cleans up images and volumes not used by docker
+- ehazlett/interlock : Docker Event Driven Plugin System
