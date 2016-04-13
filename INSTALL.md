@@ -24,6 +24,7 @@ export no_proxy=localhost```
 - Charger la configuration ```source ~/.babunrc```
 - Vérifier l'installation ```babun check```
 - Mettre à jour Babun ```babun update```
+- Activer le copier/coller par sélection souris ```echo "set mouse-=a" >> ~/.vimrc```
 
 ## Activer [TTY](http://www.linusakesson.net/programming/tty/) sur Babun avec le [workaround de tiangolo](https://github.com/tiangolo/babun-docker)
 - Lancer la commande ```curl -s https://raw.githubusercontent.com/tiangolo/babun-docker/master/setup.sh | source /dev/stdin```
