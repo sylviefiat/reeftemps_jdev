@@ -9,9 +9,9 @@
     <link href="css/monokai.css" rel="stylesheet"/>
 </head>
 <body>
-<a href='https://github.com/mfilotto/docker-presentation'><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
 
 <div id="impress">
+   
     <!-- our slides will go here -->
     <div class="fallback-message">
         <p>Your browser doesn't support the features required by impress.js, so you
@@ -19,686 +19,141 @@
         <p>For the best experience please use the latest Chrome, Safari, or Firefox 10.</p>
     </div>
 
-    <header id="title" class="step" data-x="-3000" data-y="-1500">
-        <img src="img/Logo_OREANET_fr.png" alt="Présentation" width="500">
-    </header>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Le plan</h1><br/>
-        <ol>
-            <li class="selected">Un peu d'Histoire</li>
-            <li>Les concepts fondateurs</li>
-            <li>Un déballage de la Toolbox</li>
-            <li>La stratégie Docker Inc</li>
-            <li>Les paradigmes promus par Docker</li>
-            <li>De nouvelles problématiques</li>
-            <li>L'écosystème Docker</li>
-            <li>Quelques perspectives</li>
-        </ol>
+    <section id="title" class="step logo" data-x="3500" data-y="2100" data-scale="6">
+	<h1>Lancement du réseau de surveillance citoyen OREANET</h1>
+	<p>Sylvie Fiat, Pascal Dumas, Mehdi Adjeroud</p>
+	<p>IRD - GOPS</p>
+        <img src="img/Logo_OREANET_fr.png" alt="logo" width="60%">
+    </section>
+    
+    <section class="step slide style1" data-x="2800" data-y="4000" data-z="-3000" data-scale="1">
+	<h1><i>Acanthaster planci</i></h1>
+	<div class="img1">
+		<img src="img/aca1.jpg" alt="aca1" width="60%"></img>
+		<img src="img/aca2.jpg" alt="aca2" width="60%"></img>
+		<img src="img/aca3.jpg" alt="aca3" width="60%"></img>
+		<img src="img/aca4.jpg" alt="aca4" width="60%"></img>
+		<img src="img/aca5.jpg" alt="aca5" width="60%"></img>
+		<img src="img/aca6.jpg" alt="aca6" width="60%"></img>
+		<img src="img/aca7.jpg" alt="aca7" width="60%"></img>
+	</div>
+	<div class="p1">	
+		<p>"Coussin de belle-mère"</p>
+		<p>"Couronne du Christ"</p>
+		<p>"Couronne d'épines"</p>
+	</div>
+    </section>
+    
+    <section class="step slide style1" data-x="3800" data-y="4000" data-z="-3000" data-scale="1">
+        <h1>Infestation</h1>
+	<div class="img2">
+		<img src="img/infest1.jpg" alt="infest1"></img>
+		<img src="img/infest2.jpg" alt="infest2"></img>
+	</div>
+	<div class="img3">	
+		<img src="img/infest3.jpg" alt="infest3" width="100%"></img>
+	</div>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Un peu d'Histoire : le synopsis</h1><br/>
-        <ol>
-            <li>Bio Solomon Hykes</li>
-            <li>Origine du projet</li>
-            <li>La start-up qui aurait du être française</li>
-            <li>Choix du Go</li>
-            <li>Evolution éclair de l'adoption</li>
-            <li>Un soupçon de stats</li>
-        </ol>            
-        <span class="slide-corner-bottom"><img src="img/solomon-hykes.jpg" alt="Solomon Hykes" width="350"/></span>
-    </section>   
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Un peu d'Histoire : l'ère dotCloud</h1><br/>
-        <ol>
-            <li>2006 - Solomon Hykes diplômé de l'Eptitech</li>
-            <li>2008 - création de dotCloud avec Sébastien Pahl</li>
-            <li>Aucun finacement trouvé parmi les business angels français</li>
-            <li>Le 1er virage : un changement géographique</li>
-            <li>2010 - Incubation au sein de Y Combinator</li>
-            <li>Les start-up de Y Combinator comme early adopters</li>
-            <li>"Go, c'est un peu la Suisse des langages modernes"</li>
-            <li>2011 - implantation dans la Silicon Valley</li>
-            <li>Demandes récurrentes d'accès à des briques légo du socle dotCloud</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/dotcloud-era.png" alt="dotcloud era logo" width="200"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Un peu d'Histoire : l'ère Docker</h1><br/>
-        <ol>
-            <li>Le 2ème virage : un changement stratégique</li>
-            <li>Modularisation des services internes du PaaS doCloud</li>
-            <li>2013 - ouverture de Docker à l'open source</li>
-            <li>Mars 2013 - lancement de Docker Hub</li>
-            <li>Septembre 2013 - Red Hat l'intègre à OpenShift</li>
-            <li>Fin 2014 - Adoption par Microsoft, Google, Amazon, IBM</li>
-            <li>Septembre 2015 - 40% des usages en production</li>
-            <li>Novembre 2015 - 1.2 milliards de pulls</li>
-            <li>Février 2016 - 2 milliards de pulls / 7000 par min</li>
-            <li>Democratisation des PaaS et Caas privés</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-era.jpg" alt="docker era logo" width="180"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Le plan</h1><br/>
-        <ol>
-            <li>Un peu d'Histoire</li>
-            <li class="selected">Les concepts fondateurs</li>
-            <li>Un déballage de la Toolbox</li>
-            <li>La stratégie Docker Inc</li>
-            <li>Les paradigmes promus par Docker</li>
-            <li>De nouvelles problématiques</li>
-            <li>L'écosystème Docker</li>
-            <li>Quelques perspectives</li>
-        </ol>
+    <section class="step slide style2" data-x="3500" data-y="100" data-scale="1">
+        <span class="slide-corner"><img src="img/pin4-oreanet.png" alt="docker logo" height="42" width="42"/></span>
+        <h1>Oreanet en Nouvelle-Calédonie</h1><br/>
+	<div>    
+		<h2>Lancement le 15 décembre 2015</h2>	
+		<ul>		
+		<li>42 observations (dont 28 VFD et IRD)</li>	
+		<li>23 observateurs différents</li>	
+		<li>502 visites sur le site depuis le lancement</li>	
+		<li>3 mois > 100 visites = lancement + pub</li>
+		</ul>
+		<img class="bottom" src="img/analytics.png" width="100%"></img>
+	</div>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Les concepts fondateurs</h1><br/>
-        <ol>
-            <li>Une première approche</li>
-            <li>L'allégorie du container</li>
-            <li>Le slogan devOPS</li>
-            <li>Le container linux LXC</li>
-        </ol>
-    </section>  
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : Une première approche</h1><br/>
-        <ol>
-            <li>Un mode de virtualisation léger et rapide</li>
-            <li>Basé sur les containers linux LXC</li><br/>
-            <li>Une execution isolée</li>
-            <li>Avec maitrise des flux (port, montage disque)</li><br/>
-            <li>Un mécanisme de gestion de configuration</li>
-            <li>Avec des scripts d'installation versionnés</li><br/>
-            <li>Un outil de déploiement simple et intégré</li>
-            <li>Avec un dépôt central des images à installer</li>
-        </ol>
+    <section class="step computer" data-x="2000" data-y="-1000" data-z="3000" data-scale="1">
+        <div id="oreanet"></div>
     </section> 
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-soft-1.png" alt="Matric from hell soft world" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-real-1.png" alt="Matric from hell real world" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-real-solution.png" alt="Solution to Matric from hell real world" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-real-2.png" alt="Matric from hell real world solved" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-soft-solution.png" alt="Soution to Matric from hell soft world" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1><br/>
-        <img src="img/matrix-from-hell-soft-2.png" alt="Matric from hell soft world solved" width="760"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1>
-        <h2>Double abstraction du container</h1><br/>
-        <img src="img/double-abstract-real.png" alt="Double abstraction du container" width="760"/>
+    <section class="step mobile" data-x="4500" data-y="-1000" data-z="3000" data-scale="1">
+        <img src="img/mobilenc.png" height="100%"></img>
+	<div class="demo">
+	    <p>DEMO</p>
+	</div>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : L'allégorie du container</h1>
-        <h2>Double abstraction du container Docker</h1><br/>
-        <img src="img/double-abstract-soft.png" alt="Double abstraction du container Docker" width="760"/>
+    <section class="step slide style2" data-x="1500" data-y="100" data-scale="1">
+        <h1>Oreanet au Vanuatu</h1><br/>
+	<div>    
+		<h2>Lancement en 2014</h2>	
+		<ul>
+		<li>31 observations (dont 5 IRD)</li>	
+		<li>12 explosions > 100</li>	
+		<li>Max > 6000 en 2014</li>	
+		<li>8 nettoyages déclenchés</li>
+		</ul>
+		<img class="right" src="img/cots.jpg" width="40%"></img>
+	</div>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : Le slogan devOPS</h1>
-        <h2>"Build, ship and run any app, anywhere"</h1>
-        <img src="img/docker-build-ship-run.png" alt="Build ship run" width="615"/>
-        <img src="img/docker-slogan.png" alt="Slogan docker" width="700"/>
+    <section class="step computer" data-x="-200" data-y="1500" data-z="3000" data-scale="1">
+	<div>        
+	<img src="img/fisheries.png" height="100%"></img>
+	</div>
+    </section> 
+
+    <section class="step slide style2" data-x="5500" data-y="100" data-scale="1">
+        <h1>Oreanet aux Îles Fidji</h1><br/>
+	<div>    
+		<h2>Lancement en 2016</h2>	
+		<ul>
+		<li>Etat des lieux inconnu</li>	
+		<li>1 étudiante de Master</li>	
+		<li>Diffusion par les ONG</li>	
+		</ul>
+		<img class="right" src="img/oreanet_usp.jpg" width="40%"></img>
+	</div>
+    </section>
+   <section class="step computer" data-x="7000" data-y="500" data-z="3000" data-scale="1">
+        <div id="oreanet-fj"></div>
+    </section> 
+
+    <section class="step mobile" data-x="7000" data-y="2500" data-z="3000" data-scale="1">
+        <img src="img/mobilefj.png" height="100%"></img>
+    </section> 
+
+    <section class="step slide" data-x="3460" data-y="4200" data-scale="1">
+     	<h1>Initiative « OCEANIA REGIONAL ACANTHASTER NETWORK  »</h1>
+	<div>
+		<img src="img/ird.jpg" width="19%"></img>
+		<img src="img/france.jpg" width="19%"></img>
+		<img src="img/gouvnc.jpg" width="19%"></img>
+		<img src="img/usp.jpg" width="19%"></img>
+		<img src="img/vfd.jpg" width="19%"></img>
+	</div>
+	</br>
+	</br>
+	<h1>GOPS</h1>
+	<p>Grand observatoire de l'environnement et de la biodiversité terrestre et marine du Pacifique sud</p>
+	<img src="img/gops.png" width="19%"></img>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Concepts fondateurs : Le container linux LXC</h1>
-        <h2>Container vs VM</h1>
-        <img src="img/containers-vs-vm.jpg" alt="Container vs VM" width="830"/>
-        <ol>
-            <li>Une technologie Linux-only</li>
-            <li>Le kernel linux de l'hôte partagé avec les containers</li>
-            <li>Un container = un processus linux isolé sur un hôte linux</li>
-        </ol>            
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Le plan</h1><br/>
-        <ol>
-            <li>Un peu d'Histoire</li>
-            <li>Les concepts fondateurs</li>
-            <li class="selected">Un déballage de la Toolbox</li>
-            <li>La stratégie Docker Inc</li>
-            <li>Les paradigmes promus par Docker</li>
-            <li>De nouvelles problématiques</li>
-            <li>L'écosystème Docker</li>
-            <li>Quelques perspectives</li>
-        </ol>
+    <section class="step computer" data-x="3550" data-y="4500" data-z="3000" data-scale="1">
+        <div id="gops"></div>
     </section>
 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox</h1><br/>
-        <ol>
-            <li class="selected">Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm pour orhcestrer l'essaim</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Une présentation</h1><br/>
-        <ol>
-            <li>Briques Open Source sous licence Apache V2</li>
-            <li>Développées en Go ou python pour les plus anciennes</li>
-            <li>Basées sur des API REST JSON</li>
-            <li>le mantra Docker: “batteries included but swappable"</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Une présentation</h1>
-        <h2>Un lexique</h1>
-        <p><b>Container</b> : instance runtime d'une image</p>
-        <p><b>Image</b> : template d'un container basé sur l'union de couches de filesystems</p>
-        <p><b>Registry</b> : dépôt d'images Docker accessibles par l'API Registry</p>
-        <p><b>Dockerfile</b> : Big data generated by your technology infrastructure, security systems and business application</p>
-        <p><b>Docker host</b> : VM basée sur un OS Docker-ready</p>
-        <p><b>Docker client</b> : CLI permet d'exécuter des commandes Docker</p>
-        <p><b>Docker daemon</b> : process exécutant les commandes Docker</p>
-        <p><b>Compose</b> : outil de configuration d'une architecture multi-containers à partir d'un fichier yaml</p>
-        <p><b>Swarm</b> : outil de gestion d'un cluster de Docker Hosts comme un seul Docker host virtuel</p>
-        <p><b>Machine</b> : outil de création de Docker hosts en local, sur un data center ou sur un cloud provider</p>        
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Une présentation</h1>
-        <h2>L'environnement d'execution Linux</h1><br/>
-        <img src="img/docker-host.png" alt="docker host" width="800"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Une présentation</h1>
-        <h2>Le cycle de vie</h1><br/>
-        <img src="img/docker-lifecycle.png" alt="docker lifecyle" width="800"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-registry.png" alt="docker registry" height="42" width="42"/></span>
-        <h1>La Toolbox : La Registry comme écrin</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li class="selected">La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-registry.png" alt="docker registry" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-registry.png" alt="docker registry" height="42" width="42"/></span>
-        <h1>La Toolbox : La Registry comme écrin</h1>
-        <h2>Qu'est-ce que la Registry ?</h1><br/>
-        <ol>
-            <li>Projet Open source <a href="https://github.com/docker/distribution">Distribution</a> sous licence Apache V2</li>
-            <li>Développé en Go</li>
-            <li>Un lieu central ou stocker et distribuer des images Docker</li>
-            <li>Stocke les différentes couches d'une image</li>
-            <li>Stocke la description permettant de construire une image</li>
-            <li>Expose l'API Registry aux clients Docker</li>
-            <li>En V2 emet des notifications webhook (autoredeploy <i class="fa fa-thumbs-o-up"></i>)</li><br/>
-            <li><a href="https://hub.docker.com">Docker Hub</a>: registry SaaS (images publiques gratuites <i class="fa fa-thumbs-o-up"></i>)</li>
-            <li>Docker Trusted Registry: version on-premise de Docker Hub</li>
-        </ol>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-registry.png" alt="docker registry" height="42" width="42"/></span>
-        <h1>La Toolbox : La Registry comme écrin</h1>
-        <h2>Quelques astuces pour bien choisir son image</h1><br/>
-        <ol>
-            <li>Vérifier soigneusement le contenu du Dockerfile</li>
-            <li>Eviter les images sans github associé</li>
-            <li>Préférer une image légère : onglet tag pour la taille</li>
-            <li>Plébiscitée: stars/downloads/forks de DockerHub/GitHub</li>
-            <li>Maintenue: repository automated et dates des tags </li>
-            <li>Privilégier les images officielles (après portage sur Alpine)</li><br/>
-            <li>Embauche de Natanael Copa créateur d'Alpine</li>
-            <li>Février 2016 : Hykes annonce le portage des images officielles sur Alpine</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-plus-alpine.jpg" alt="docker plus alipine" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li class="selected">L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-background.jpg" alt="docker toolbox" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <h2>Qu'est-ce que l'Engine ?</h1><br/>
-        <ol>
-            <li>Projet Open source <a href="https://github.com/docker/docker">Docker</a> sous licence Apache V2</li>
-            <li>Développées en Go</li>
-            <li>Composé d'un client CLI pour exécuter des commandes</li>
-            <li>Au travers de l'API REST Engine</li>
-            <li>Exécutées par le daemon du Host</li><br/>
-            <li>Les commandes permettent de</li>
-            <li>Gérer des images</li>
-            <li>Gérer des containers</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-engine.png" alt="docker engine" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <h2>Les workflow des commandes de base</h1>
-        <img src="img/docker-commandes.png" alt="docker commands" width="700"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <img src="img/docker-commandes-0.png" alt="docker lifecyle" width="700"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <img src="img/docker-commandes-1.png" alt="docker lifecyle" width="700"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <img src="img/docker-commandes-2.png" alt="docker lifecyle" width="700"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <img src="img/docker-commandes-3.png" alt="docker lifecyle" width="700"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : L'Engine au cœur de l'écosystème</h1>
-        <h2>Quelques astuces pour se simplifier la vie</h1><br/>
-        <div> <span class="ast">docker build -t myImage .</span> : nommer/tagger ses images</div>
-        <div> <span class="ast">docker rmi $(docker images -aq)</span> : supprimer toutes les images</div><br/>
-        <div> <span class="ast">docker run --name myName myImage</span> : nommer ses containers</div>
-        <div> <span class="ast">docker ps -a</span> : afficher tous les containers</div>
-        <div> <span class="ast">docker rm -f myName</span> : arrêter et supprimer son container en une fois</div>
-        <div> <span class="ast">docker rm $(docker ps -aqf status=exited)</span> : supprimer les containers arrêtés</div><br/>
-        <div> <span class="ast">docker exec -it myName /bin/bash</span> : entrer dans un container démarré</div>
-        <div> <span class="ast">docker logs -tf myName</span> : afficher les logs d'un container</div>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Un Dockerfile à son Image</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li class="selected">Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Un Dockerfile à son Image</h1>
-        <h2>Qu'est-ce qu'une image ?</h1><br/>
-        <ol>
-            <li>Un ensemble de commandes d'installation</li>
-            <li>Identifié par un tag organisation/nom:tag</li>
-            <li>Un empilement de couches de filesystems</li>
-            <li>Se configure avec un fichier Dockerfile</li>
-            <li>Qui Doit se trouver dans un répo git</li>
-            <li>Qui Peut utiliser le contenu du répertoire du Dockerfile</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-toolbox.jpg" alt="docker toolbox" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Un Dockerfile à son Image</h1>
-        <h2>Syntaxe d'un Dockerfile</h1><br/>
-        <div> <span class="ast">FROM &lt;image&gt;</span> : image utilisée comme base de la future image</div>
-        <div> <span class="ast">MAINTAINER &lt;name&gt;</span> : auteur de l'image</div>
-        <div> <span class="ast">ENV &lt;key&gt; &lt;value&gt;</span> : définir une variable d'environnement</div>
-        <div> <span class="ast">RUN &lt;command&gt;</span> : exécute la commande d'installation sur l'image</div>
-        <div> <span class="ast">COPY &lt;src&gt; &lt;dest&gt;</span> : ajoute un fichier local dans l'image</div>
-        <div> <span class="ast">VOLUME ["/&lt;dir&gt;"]</span> : répertoire externe monté au démarrage</div>
-        <div> <span class="ast">EXPOSE &lt;port&gt;]</span> : port réseau exposé par le conteneur</div>
-        <div> <span class="ast">CMD ["executable", "param1",...]</span> : commande lancée au démarrage</div><br/>
-        <div> <span class="ast">WORKDIR  ["/&lt;dir&gt;"]</span> : devient le répertoire interne courrant</div>
-        <div> <span class="ast">USER &lt;user&gt;</span> : utilisateur Linux utilisé lors du démarrage</div>
-        <div> <span class="ast">ONBUILD &lt;command&gt;</span></span> : commande executée dans l'image fille</div>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Un Dockerfile à son Image</h1>
-        <h2>Un example de Dockerfile</h1><br/>
-            <div style="width:100%;height:80%;overflow:auto;"> 
-
-                        <pre><code class="docker"># Se base sur l'image ubuntu version 14.04
-FROM docker-registry.valid.appli-gestion.nc/ubuntu:14.04
-MAINTAINER DTSI-Infras
-COPY config/proxy-dtsi /etc/apt/apt.conf.d/
-RUN apt-get update & \
-    apt-get install -y nginx
-RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
-VOLUME ["/usr/share/nginx/html/"]
-EXPOSE 80
-CMD ["nginx"]</code></pre>
-
-                </div>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Un Dockerfile à son Image</h1>
-        <h2>Quelques astuces pour bien constuire son Dockerfile</h1><br/>
-        <ol>
-            <li>Préciser la version de l'image de base</li>
-            <li>Choisir une image de base légère (Alpine)</li>
-            <li>Supprimer les caches d'installation</li>
-            <li>N'installer que le strict nécessaire</li>
-            <li>Placer les instructions les plus longues en haut</li>
-            <li>Placer les instructions qui changent le plus en bas</li>
-            <li>Regrouper les instructions cohérentes</li>
-            <li>En séparant les instructions sur plusieurs lignes</li>
-            <li>Utiliser un .dockerignore</li>
-            <li>Ne lancer qu'un process par container</li>
-        </ol>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose pour la palette</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li class="selected">Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-compose.png" alt="docker compose" width="250"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-compose.png" alt="docker compose" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose pour la palette</h1><br/>
-        <ol>
-            <li>Projet Open source <a href="https://github.com/docker/compose">Compose</a> sous licence Apache V2</li>
-            <li>Développées en Python</li><br/>
-            <li>Anciennement Fig développé par Orchard</li>
-            <li>Juillet 2014 Orchard acquis par Docker</li><br/>
-            <li>Facile le lancement des containers</li>
-            <li>Nous épargne les docker run sans fin</li>
-            <li>Permet de composer plusieurs containers</li>
-            <li>Se configure avec un fichier yaml</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-compose.png" alt="docker compose" width="250"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-compose.png" alt="docker compose" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose pour la palette</h1>
-        <img src="img/docker-compose-commandes.png" alt="docker compose commandes" width="700"/>
-    </section>
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-compose.png" alt="docker compose" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose pour la palette</h1>
-        <h2>Syntaxe d'un docker-compose.yml</h1><br/>
-        <div> <span class="ast">image: &lt;image&gt;</span> : image utilisée pour lancer le container</div>
-        <div> <span class="ast">build: /&lt;dir&gt;</span> : pour construire l'image au préalable</div>
-        <div> <span class="ast">dockerfile: &lt;Dockerfile-alternate&gt;</span> : nom alternatif de Dockerfile</div>
-        <div> <span class="ast">links: -&lt;linkName&gt;</span> : liens vers d'autre containers</div>
-        <div> <span class="ast">ports: -&lt;host:container&gt;</span> : mapping de ports entre host et container</div>
-        <div> <span class="ast">volumes: -&lt;host:container&gt;</span> : volumes montés entre host et container</div>
-        <div> <span class="ast">command: &lt;command&gt;</span> : commande lancée au démarrage</div>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-compose.png" alt="docker compose" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Compose pour la palette</h1>
-        <h2>Un example de docker-compose.yml</h1><br/>
-            <div style="width:100%;height:80%;overflow:auto;"> 
-                        <pre><code class="yml">
-hello-world:
-     build: .
-     volumes:
-       - ~/tuto-docker/webapp/:/usr/share/nginx/html/
-     ports:
-       - 8080:80</code></pre>
-
-                </div>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <h2>Laissons voguer nos containers vers le soleil couchant</h1><br/>
-        <img src="img/container-sunset.jpg" alt="docker sunset" width="780"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <h2>Merci à tous, suite au prochain épisode</h1><br/>
-        <img src="img/docker-theend.png" alt="docker the end" width="780"/>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-swarm.png" alt="docker swarm" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Swarm</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li class="selected">Le Swarm</li>
-            <li>La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-swarm.png" alt="docker swarm" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : La Machine</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li class="selected">La Machine</li>
-            <li>Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/docker-machine.png" alt="docker machine" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox : Le Kitematic</h1><br/>
-        <ol>
-            <li>Une présentation</li>
-            <li>La Registry comme écrin</li>
-            <li>L'Engine au cœur de l'écosystème</li>
-            <li>Un Dockerfile a son image</li>
-            <li>Le Compose pour la palette</li>
-            <li>Le Swarm</li>
-            <li>La Machine</li>
-            <li class="selected">Le Kitematic</li>
-        </ol>
-        <span class="slide-corner-bottom"><img src="img/kitematic.png" alt="kitematic" width="350"/></span>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La Toolbox: Execution Plateform</h1><br/>
-        <img src="img/docker-execution-platforme.png" alt="docker lifecyle" width="750"/>
-    </section>
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>La stratégie commerciale et la standardisation</h1><br/>
-        <ol>
-            <li>Offre commerciale</li>
-            <li>Plumbing</li>
-            <li>Open Std.</li>
-        </ol>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Les paradigmes promus par Docker</h1><br/>
-        <ol>
-            <li>devOPS</li>
-            <li>Dynamic paritionning</li>
-            <li>Immutable infrastructure</li>
-            <li>Pets vs Cows</li>
-            <li>Phoenix servers</li>
-            <li>Microservices / WOA</li>
-            <li>Infrastructure as code</li>
-            <li>Horizontal scaling</li>
-        </ol>
-    </section> 
- 
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>De nouvelles problématiques</h1><br/>
-        <ol>
-            <li>Discovery backend</li>
-            <li>Serice discovery</li>
-            <li>Leader election</li>
-            <li>Data volume container</li>
-            <li>Volume des images</li>            
-            <li>...</li>            
-        </ol>
-    </section> 
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>L'écosystème Docker</h1><br/>
-        <ol>
-            <li>Discovery backend : Etcd, Zookeeper, Consul</li>
-            <li>Service discovery : Registrator</li>
-            <li>Plugins volume : Flocker</li>
-            <li>Plugins network : Flannel, Weave</li>
-            <li>Log : Logspoud</li>
-            <li>Cluster : Mesos</li>
-            <li>Orchestration : Kubernetes, Tutum/Docker cloud, Shippyard, Tsuru; Rancher</li>
-            <li>Hosts : CoreOS, Atomic, Boot2Docker</li>
-        </ol>
-    </section>                       
-
-    <section class="step slide" data-x="-2000" data-y="-1500">
-        <span class="slide-corner"><img src="img/docker-logo.jpg" alt="docker logo" height="42" width="42"/></span>
-        <h1>Quelques perspectives</h1><br/>
-        <ol>
-            <li>Unikernels</li>
-            <li>Docker Beta for Mac and for Windows</li>            
-        </ol>
-    </section>  
-
-    <footer class="step slide" data-x="1200" data-scale="0.5">
-        <h1>Ressources</h1><br/>
-        <p>Présentation disponible hébergée sur <a href="http://mfilotto.github.io/docker-presentation" target="_blank">Github Pages</a></p><br/>
-        <p>Interview We Love Entrepreneurs de Solomon Hykes : <a href="http://www.dailymotion.com/video/x2mzkz4_solomon-hykes-docker-on-est-venu-aux-etats-unis-parce-qu-on-nous-a-propose-un-cheque_tech">«On est venu aux Etats-Unis parce qu’on nous a proposé un chèque»</a></p>
-        <p>Introduction : <a href="http://fr.slideshare.net/Docker/docker-lpc-2014cristian">Docker and Linux Kernel</a></p>
-        <p>Bonne présentation : <a href="http://fr.slideshare.net/chanezon?utm_campaign=profiletracking&utm_medium=sssite&utm_source=ssslideview">Speaker Deck de Victor Vieux</a></p>
-        <p>Univers graphique : <a href="https://fr.pinterest.com/bloglaurel/bloglaurel-my-work/">Dessinatrice Laurel</a></p>
-        <p>Très bonnes présentations : <a href="https://speakerdeck.com/vieux/">Dessinatrice Laurel</a></p>
-        <p>Grands concepts : <a href="http://fr.slideshare.net/rchalumeau/docker-le-buzz-est-il-justifi">Docker le buzz est il justifié ?</a></p>
-        <p>En profondeur : <a href="http://fr.slideshare.net/baronm/introduction-aux-architectures-microservices-mise-en-oeuvre">Introduction aux Architectures Microservices</a></p>
-        <p>Panel des acteurs : <a href="https://www.mindmeister.com/fr/389671722/open-container-ecosystem-formerly-docker-ecosystem">Docker Ecosystem</a></p>
-        <p>Documentation de référence : <a href="https://docs.docker.com">Le site de Docker </a></p>
-        <span class="slide-corner-bottom"><img src="img/docker-laurel.jpg" alt="dessinatrice Laurel" width="350"/></span>           
-    </footer>
-
-    <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10"></div>
+    <div id="overview" class="step" data-x="3800" data-y="1700" data-scale="10"></div>
 
 </div>
 <div class="hint">
     <p>Use a spacebar or arrow keys to navigate</p>
 </div>
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
 <script src="lib/impress.js"></script>
+<script src="lib/prez.js"></script>
 <script src="lib/highlight.pack.js"></script>
 <script>impress().init();</script>
 <script>hljs.initHighlightingOnLoad();</script>
