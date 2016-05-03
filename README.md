@@ -1,6 +1,6 @@
 ### Présentation de Docker
 
-http://mfilotto.github.io/docker-presentation
+http://sylviefiat.github.io/oreanet-presentation
 
 #### Crédit :
 Réalisée avec le framework de présentation [impress.js](https://github.com/impress/impress.js)
