@@ -1,5 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:700,400,300,100);
-
+#container {
+    min-width: 300px;
+    max-width: 1000px;
+    height: 90vh;
+    margin: auto;
+    margin-top:1%;
+    width:90vw;
+    border-radius:20px;
+}
 
 .scroll {
     font-family: "Courier New", Courier, monospace;
