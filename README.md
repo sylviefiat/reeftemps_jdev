@@ -1,6 +1,6 @@
-### Présentation d'oreanet
+### Présentation Reeftemps IRD GOPS
 
-http://sylviefiat.github.io/oreanet-presentation
+http://sylviefiat.github.io/reeftemps_meetup
 
 #### Crédit :
 Réalisée avec le framework de présentation [impress.js](https://github.com/impress/impress.js)
