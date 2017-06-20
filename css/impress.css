@@ -702,8 +702,8 @@ a:focus {
     for you.
 */
 
-.slide li:before {
-    content: "→ "; /* caractère UTF-8 */
+/*.slide li:before {
+    content: "→ "; 
     padding: 0 20px 6px;
     margin-right: 8px;
     vertical-align: top;
@@ -713,7 +713,7 @@ a:focus {
     font-weight: bold;
     font-size: 0.8em;
     color: white;
-}
+}*/
 
 .slide li {
     margin-bottom: 15px;

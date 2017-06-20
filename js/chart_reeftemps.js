@@ -249,11 +249,17 @@ var options = {
     yAxis: [{
         max: 15000000,
         labels: {
-            enabled: false
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
         },
         title: {
-            text: ''
+            text: 'Mesures',
+            style: {
+                color: Highcharts.getOptions().colors[0]
+            }
         },
+        opposite: false,
         gridLineColor: 'rgba(0, 0, 0, 0.07)'
     }, {
     		allowDecimals: false,
@@ -265,7 +271,7 @@ var options = {
         },
         title: {
            text: 'Jeux de données',
-            style: {
+           style: {
                 color: Highcharts.getOptions().colors[1]
             }
         },
@@ -489,4 +495,4 @@ if (Highcharts.seriesTypes.flags) {
     });
 }
 
-Highcharts.stockChart('container', options);
+Highcharts.stockChart('containerGraph', options);

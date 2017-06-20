@@ -1,0 +1,1 @@
+document.getElementById('reeftemps').innerHTML = '<object type="text/html" data="http://reeftemps.ird.nc"></object>';

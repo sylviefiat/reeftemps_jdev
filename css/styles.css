@@ -1,12 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:700,400,300,100);
-#container {
+#containerGraph {
     min-width: 300px;
-    max-width: 1000px;
+    max-width: 100%;
     height: 90vh;
     margin: auto;
-    margin-top:1%;
+    margin-top:100px;
     width:90vw;
+}
+#containerGraph .highcharts-container {
     border-radius:20px;
+}
+#containerMap {
+    margin-top:100px;
+    text-align:center;
 }
 
 .scroll {
@@ -32,6 +38,11 @@
     margin-top: 0px;
 }
 
+#title h2 {
+    font-size: 38px;
+    font-weight: 500;
+    padding-bottom:30px;
+}
 #title h1 {
     font-size: 60px;
     font-weight: 700;
@@ -41,18 +52,15 @@
     font-size: 30px;
     font-weight:300;
 }
-
+blockquote {
+    padding-left:30px;
+    margin-top:30px;
+    margin-bottom:50px;
+    border-left: 5px solid grey;
+}
 .link {
 	font-size: 100px;
 	padding-top: 30px;
-}
-
-.mobile img {
-	
-}
-
-.link2 a {
-	float:right;
 }
 
 .slide h1 {
@@ -73,12 +81,14 @@
     bottom: 0.5rem;
     right: 0.5rem;
 }
-
-.style1 .p1 {
-    margin-left: -500px;
-    font-size: smaller;
-    margin-top: -90px;
-    text-align: center;
+.style1 {
+    text-align:center;
+}
+.style1 p {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 27px;
+    line-height: 36px;
+    letter-spacing: -1px;
 }
 
 .style1 .img1, .style1 .img2 {
@@ -118,9 +128,6 @@
    right:10px;
 }
 
-.mobile {
-    text-align: center;
-}
 
 .computer {
     width:100vw;
@@ -155,4 +162,20 @@
     margin:auto -30%;
 }
 
+.ex1 {
+    /*font-weight: bold;*/
+    color:#5bc0de;
+}
 
+.ex2 {
+    /*font-weight: bold;*/
+    color:#d9534f;
+}
+
+.code {
+    background-color: black;
+    color:white;
+    font-family: courrier;
+    font-size: smaller;
+    line-height: 1;
+}
