@@ -1,6 +1,8 @@
-### Présentation Reeftemps IRD GOPS
+### Présentation Docker en production - exemple d'une application de valorisation de données issues de capteurs - Reeftemps IRD GOPS
 
-http://sylviefiat.github.io/reeftemps_meetup
+http://docker-noumea.github.io/meetup-S03E03
+
+Auteur: Sylvie Fiat
 
 #### Crédit :
 Réalisée avec le framework de présentation [impress.js](https://github.com/impress/impress.js)
