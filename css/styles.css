@@ -69,10 +69,11 @@ blockquote {
 }
 
 .slide h2 {
-    font-size: 25px;
+    font-size: 30px;
+    text-align: center;
     font-style:  italic;
     padding-top: 10px;
-    padding-left: 40px;
+    padding-bottom: 40px;
 }
 
 
@@ -164,12 +165,12 @@ blockquote {
 
 .ex1 {
     /*font-weight: bold;*/
-    color:#5bc0de;
+    color:#005786;
 }
 
 .ex2 {
     /*font-weight: bold;*/
-    color:#d9534f;
+    color:#a4c537;
 }
 
 .code {
@@ -178,4 +179,12 @@ blockquote {
     font-family: courrier;
     font-size: smaller;
     line-height: 1;
+}
+
+.smaller {
+    font-size: smaller;
+}
+
+.authors {
+    font-size: 10px;
 }
