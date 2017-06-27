@@ -102,7 +102,7 @@
     	<h1><span class="fa-stack fa-lg">
 				  <i class="fa fa-circle fa-stack-2x"></i>
 				  <i class="fa fa-stack-1x fa-inverse">1</i>
-				</span>  Services adaptés aux utilisateurs : 
+				</span>  Services adaptés aux utilisateurs
     	</h1>
         <h2 class="ex2">Océanographes physiciens</h2>
     	<img src="img/oceano.png" width="100%"/>
@@ -112,7 +112,7 @@
     	<h1><span class="fa-stack fa-lg">
 				  <i class="fa fa-circle fa-stack-2x"></i>
 				  <i class="fa fa-stack-1x fa-inverse">1</i>
-				</span>  Services adaptés aux utilisateurs : 
+				</span>  Services adaptés aux utilisateurs
     	</h1>
         <h2 class="ex2">Autres chercheurs</h2>
     	<img src="img/autres.png" width="100%"/>
@@ -122,7 +122,7 @@
         <h1><span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-stack-1x fa-inverse">1</i>
-                </span>  Services adaptés aux utilisateurs : 
+                </span>  Services adaptés aux utilisateurs
         </h1>
         <h2 class="ex2">Internationalisation</h2>
         <img src="img/international.png" width="100%"/>
@@ -151,20 +151,109 @@
         <h1><span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-stack-1x fa-inverse">2</i>
-                </span>  Dockerisation : 
+                </span>  Dockerisation
         </h1>
-        <h2 class="ex2">Pourquoi ?</h2>
+        <h2 class="ex2">Raison n°1: Le choix du multi-instance</h2>
         <img src="img/docker_reeftemps3.png" width="100%"/>
+    </section>
+
+    <section class="step slide" data-x="6500" data-y="-2000" data-z="0" data-scale="2">
+        <h1><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-1x fa-inverse">2</i>
+                </span>  Dockerisation
+        </h1>
+        <h2 class="ex2">Raison n°2: La mise à jour des versions + paramétrage</h2>
+        <hr/>
+        <ul>
+            <li><i class="fa fa-check ex2"></i> Permet de mettre à jour facilement les versions (tomcat, php, etc.)</li>
+            <li><i class="fa fa-check ex2"></i> Retour arrière facile si l'application ne supporte pas la nouvelle version</li>
+            <li><i class="fa fa-check ex2"></i> Images officielles auront le paramétrage optimal</li>
+            <br/>
+            <li><i class="fa fa-exclamation-triangle ex3"></i> Certaines applis ne seront pas portables (obsolètes)</li>
+            <li><i class="fa fa-exclamation-triangle ex3"></i> Attention au coût de la destructuration</li>
+        </ul>
     </section>
 
     <section class="step slide" data-x="6500" data-y="-2000" data-z="-1000" data-scale="2">
         <h1><span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-stack-1x fa-inverse">2</i>
-                </span>  Dockerisation : 
+                </span>  Dockerisation
         </h1>
-        <h2 class="ex2">Comment ?</h2>
-        <img src="img/docker_reeftemps3.png" width="100%"/>
+        <h2 class="ex2">Bonnes pratiques</h2>
+       <hr/>
+        <div>
+            <ul>
+                <li><i class="fa fa-check"></i> <span class="ex2">Un</span> container par brique logique</li>
+                <li><i class="fa fa-check"></i> Privilégier les <span class="ex2">images officielles</span></li>
+                <li><i class="fa fa-check"></i> Préférer une image <span class="ex2">légère</span></li>
+                <li><i class="fa fa-check"></i> Enfin, choisir une image <span class="ex2">maintenue</span> et <span class="ex2">plébiscitée</span></li>
+            </ul>
+        </div>
+        <br/>
+        <div>
+            <ul>
+                <li><i class="fa fa-plus-circle"></i> Vérifier le Dockerfile (ce que ça installe, si c'est "propre")</li>
+                <li><i class="fa fa-plus-circle"></i> Surcharger si besoins (refaire un Dockerfile en ajoutant des specifications particulières)</li>
+            </ul>
+        </div><hr/>
+    </section>
+
+    <section class="step slide" data-x="6500" data-y="-2000" data-z="-2000" data-scale="2">
+        <h1><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-1x fa-inverse">2</i>
+                </span>  Dockerisation
+        </h1>
+        <h2 class="ex2">Cas n°1: l'éditeur fournit une image</h2>
+        <div style="width:100%;text-align:center;"><a target="_blank" href="https://hub.docker.com/r/52north/"> Exemple avec 52 north</a></div>
+        <img src="img/win.png" width="75%"/>
+    </section>
+
+    <section class="step slide" data-x="6500" data-y="-2000" data-z="-3000" data-scale="2">
+        <h1><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-1x fa-inverse">2</i>
+                </span>  Dockerisation
+        </h1>
+        <h2 class="ex2">Cas n°2: Pas d'image...</h2>
+        <div style="width:100%;text-align:center;">Exemple avec Geoserver + customisation</div>
+        <div style="width:100%;height:100%;overflow:auto;font-size:smaller;overflow-y: hidden;float:left;">
+
+        <pre>
+<i>Dockerfile</i><code class="docker hljs dockerfile"><span class="hljs-comment"># Image Tomcat officielle</span>
+<span class="hljs-comment"># Surcharge SSH</span>   
+<span class="hljs-keyword">FROM</span> tomcat:<span class="hljs-number">8.0-jre8</span>                 
+<span class="hljs-keyword">MAINTAINER</span> GOPS
+
+<span class="hljs-keyword">ENV</span> GEOSERVER_VERSION 2.9.1
+<span class="hljs-comment"># Installation de la librairie jai</span>
+<span class="hljs-keyword">RUN</span> wget and install jai libs
+<span class="hljs-comment"># Installation de Geoserver</span>
+<span class="hljs-keyword">RUN</span> wget and install geoserver
+<span class="hljs-comment"># Installation de CorsFilter</span>
+<span class="hljs-keyword">RUN</span> chmod +x enable-cors.sh && ./enable-cors.sh
+<span class="hljs-keyword">CMS</span> $GEOSERVER_HOME/bin/startup.sh
+<span class="hljs-comment"># Expose port 80</span>
+<span class="hljs-keyword">EXPOSE</span> 80
+                </code>
+            </pre>
+        </div>
+
+    </section>
+
+    <section class="step slide" data-x="0" data-y="-1000" data-z="0" data-scale="5">
+        <div style="width:100%;height: 100%;text-align: center;">
+        <h1 style="margin-top:30%"><span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-stack-1x fa-inverse fa-desktop"></i>
+                </span>  Démonstration
+        </h1>
+        <div style="margin-top:30px;padding:10px;border:1px solid grey;">
+        <a target="_blank" href="http://reeftemps.observatoire-gops.org">http://reeftemps.observatoire-gops.org</a>
+        </div>
+        </div>
     </section>
 
     <section class="step slide" data-x="0" data-y="-1000" data-z="0" data-scale="5">

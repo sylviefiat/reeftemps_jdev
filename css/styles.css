@@ -173,6 +173,11 @@ blockquote {
     color:#a4c537;
 }
 
+.ex3 {
+    /*font-weight: bold;*/
+    color:#ee7f01;
+}
+
 .code {
     background-color: black;
     color:white;
