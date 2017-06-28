@@ -1,0 +1,167 @@
+# SITECPSO DEPLOY
+version: '2'
+services:
+
+# PostgreSQL database
+# Version build utilisant le Dockerfile présent dans ./sitecpsodb_data/ et le fichier
+# dump à placer dans .sitecpsodb_data/dump/.
+# Attention : si vous modifiez POSTGRES_USER, POSTGRES_PASSWORD et POSTGRES_DB il faudra
+# mettre à jour les fichiers de configuration DataBaseSource.xml et DbOceanoConfig.xml
+# de sitecpsoweb.
+  sitecpsodb:
+    hostname: sitecpsodb
+    image: reeftemps/postgres_ssh
+    restart: unless-stopped
+    expose:
+      - 5432
+      - 22
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./sitecpsodb_data/pg_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=oceano
+
+# SOS Restful 52 North
+  sitecpsosos:
+    hostname: sitecpsosos
+    image: 52north/sos:4.3.8
+    restart: unless-stopped
+#    ports:
+#      - 8080:8080
+    volumes:
+#      - ./sitecpsosos_data/configuration.db:/usr/local/tomcat/webapps/52n-sos-webapp/configuration.db
+#      - ./sitecpsosos_data/WEB-INF/datasource.properties:/usr/local/tomcat/webapps/52n-sos-webapp/WEB-INF/datasource.properties
+      - ./sitecpsosos_data/webapps:/usr/local/tomcat/webapps
+    environment:
+      - POSTGRES_DB_PASSWORD=docker
+      - POSTGRES_DB_USERNAME=postgres
+      - POSTGRES_DB_HOST=sitecpsodb
+    links:
+      - sitecpsodb:sitecpsodb
+
+# GEOSERVER
+  sitecpsogeo:
+    hostname: sitecpsogeo
+    image: sylviefiat/docker-geoserver
+    restart: unless-stopped
+    volumes:
+      - ./sitecpsogeo_data/data:/opt/geoserver/data_dir
+    links:
+      - sitecpsodb:sitecpsodb
+
+# DAP2CSV & DAP2GRAPH
+  sitecpsopy:
+    hostname: sitecpsopy
+    image: reeftemps/httpd_python
+    restart: unless-stopped
+#    ports:
+#      - "82:80"
+    volumes:
+      - ./sitecpsopy_data/webapps/:/webapp/
+      - ./sitecpsopy_data/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf
+      - ./sitecpsopy_data/logs:/var/www/webpy/
+
+# THREDDS
+  sitecpsodap:
+    hostname: sitecpsodap
+    image: axiom/docker-thredds:4.6.6
+    restart: unless-stopped
+    volumes: 
+      - ./sitecpsodap_data/tomcat/javaops.sh:/opt/tomcat/bin/javaopts.sh
+      - ./sitecpsodap_data/thredds:/opt/tomcat/content/thredds
+      - ./sitecpsodap_data/tomcat/gops_logo.png:/opt/tomcat/webapps/thredds/gops_logo.png
+      - ./sitecpsoweb_data/data:/opt/ird/dboceano/data
+    ports:
+#      - "8081:8080"
+      - "8443:8443"
+
+# GEONETWORK DATABASE
+  sitecpsogndb:
+    hostname: sitecpsogndb
+    image: postgres:9.5.2
+    restart: unless-stopped
+    volumes:
+      - ./sitecpsogndb_data/pg_data:/pg_data/var/lib/postgresql/data
+#    ports:
+#      - "5433:5432"
+    environment:
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=geonetwork
+
+# GEONETWORK
+  sitecpsogn:
+    hostname: sitecpsogn
+    image: geocat/geonetwork:3.2.0-postgres
+    restart: unless-stopped
+    volumes:
+#      - ./sitecpsogn_data/tomcat_conf:/usr/local/tomcat/conf
+#      - ./sitecpsogn_data/data/config/schema-plugins:/var/lib/geonetwork_data/config/schema_plugins
+      - ./sitecpsogn_data/favicon.png:/usr/local/tomcat/webapps/geonetwork/images/logos/favicon.png
+#      - ./sitecpsogn_data/config/jdbc.properties:/usr/local/tomcat/webapps/geonetwork/WEB-INF/config-db/jdbc.properties
+#      - ./sitecpsogn_data/webapps:/usr/local/tomcat/webapps
+#    ports:
+#      - "8082:8080"
+    environment:
+      - DATA_DIR=/var/lib/geonetwork_data
+      - POSTGRES_DB_PASSWORD=docker
+      - POSTGRES_DB_USERNAME=postgres
+      - POSTGRES_DB_HOST=sitecpsogndb
+    links:
+      - sitecpsogndb:sitecpsogndb
+
+# WEBSERVICES TO DISPLAY DATA (and display them in html ?)
+  sitecpsows:
+    hostname: sitecpsows
+    image: tomcat:8.0-jre8
+    restart: unless-stopped
+    volumes:
+      - ./sitecpsows_data/webapps:/usr/local/tomcat/webapps
+#    ports:
+#      - "8083:8080"
+    links:
+      - sitecpsodap:sitecpsodap
+      - sitecpsogeo:sitecpsogeo
+
+# WEBSITE TO MANAGE DATABASE AND ADD FILES TO THREDDS
+  sitecpsoweb:
+    hostname: sitecpsoweb
+    image: reeftemps/tomcat_ssh
+    restart: unless-stopped
+    volumes:
+      - ./sitecpsoweb_data/webapps:/usr/local/tomcat/webapps
+      - ./sitecpsoweb_data/data:/opt/ird/dboceano/data
+      - ./sitecpsoweb_data/config:/opt/ird/dboceano/config
+      - ./sitecpsoweb_data/log:/opt/ird/dboceano/log
+#    ports:
+#      - "81:80"
+    environment:
+      - CATALINA_OPTS=-Xmx4096m -Xms2048m -XX:SoftRefLRUPolicyMSPerMB=1 -XX:MaxPermSize=2048m -XX:-UseGCOverheadLimit -Djava.awt.headless=true
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=oceano
+      - REMOTE_HOST=sitecpsodb
+      - UNIX_USER=postgres
+      - UNIX_PASSWORD=crazydb
+    links:
+      - sitecpsodb:sitecpsodb
+
+# PROXY ROUTER FOR DOCKER
+  haproxy:
+    image: docker.io/rafpe/docker-haproxy-rsyslog 
+    hostname: haproxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./haproxy_data/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    links:
+      - sitecpsogn:sitecpsogn
+      - sitecpsodap:sitecpsodap
+      - sitecpsows:sitecpsows
+      - sitecpsogeo:sitecpsogeo
+      - sitecpsosos:sitecpsosos
+      - sitecpsoweb:sitecpsoweb
