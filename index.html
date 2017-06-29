@@ -60,7 +60,7 @@
         <li class="smaller"><span class="ex2">14 pays :</span><b style="padding-left: 30px;"> Nouvelle-Calédonie, Polynésie Française, Wallis & Futuna, Vanuatu, Miconésie, Iles Marshall, Papouasie Nouvelle-Guinnée, Tuvalu, Kiribati, Palau, Tokelau, Nauru, Samoa, Fidji</b></li>
         
         <li class="smaller"><span class="ex2">164 capteurs :</span><b style="padding-left: 30px;"> dont 70 en activité actuellement</b></li>
-        <li class="smaller"><span class="ex2">50 années :</span><b style="padding-left: 30px;"> 1958-2017 bientôt un demi siècle de données</b></li>
+        <li class="smaller"><span class="ex2">~60 années :</span><b style="padding-left: 30px;"> 1958-2017 plus d'un demi siècle de données</b></li>
         </ul>
         <hr/>
     </section>
@@ -79,17 +79,17 @@
     </section>
 
     <section class="step computer style1" data-x="3000" data-y="4000" data-z="0" data-scale="2">        
-		<div id="containerGraph" style="width: 80%; height: 700px;"></div>
+		<div id="containerGraph" style="width: 80%; height: 600px;"></div>
     </section>
 
     <section class="step slide" data-x="0" data-y="-3500" data-z="0" data-scale="3">
     	<h1>Ce qui nous intéresse aujourd'hui</h1>
-    	<blockquote><span class="fa-stack fa-lg">
+    	<blockquote style="margin-bottom:30px !important"><span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-stack-1x fa-inverse">1</i>
                 </span><span class="ex2">Multiplicité des services</span> pour toucher les différentes communautés d'utilisateurs</blockquote>
-        <img src="img/services.png" width="100%"/>
-    	<blockquote><span class="fa-stack fa-lg">
+        <img src="img/services.png" width="100%" />
+    	<blockquote style="margin-bottom:30px !important"><span class="fa-stack fa-lg">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-stack-1x fa-inverse">2</i>
                 </span><span class="ex2">Architecture SOA portée sous Docker</span> pour faciliter l'installation d'instances chez les producteurs</blockquote>
@@ -234,7 +234,7 @@
 <span class="hljs-keyword">RUN</span> wget and install geoserver
 <span class="hljs-comment"># Installation de CorsFilter</span>
 <span class="hljs-keyword">RUN</span> chmod +x enable-cors.sh && ./enable-cors.sh
-<span class="hljs-keyword">CMS</span> $GEOSERVER_HOME/bin/startup.sh
+<span class="hljs-keyword">CMD</span> $GEOSERVER_HOME/bin/startup.sh
 <span class="hljs-comment"># Expose port 80</span>
 <span class="hljs-keyword">EXPOSE</span> 80
                 </code>
